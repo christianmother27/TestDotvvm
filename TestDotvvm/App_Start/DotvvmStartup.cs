@@ -45,7 +45,7 @@ namespace TestDotvvm.App_Start
             {
                 Location = new UrlResourceLocation("~/css/dataTables.jqueryui.css")
             });
-            config.Resources.Register("simtech-glyphicons-css", new StylesheetResource()
+            config.Resources.Register("glyphicons-css", new StylesheetResource()
             {
                 Location = new UrlResourceLocation("~/css/glyphicons.css")
             });
@@ -59,7 +59,7 @@ namespace TestDotvvm.App_Start
             });
             config.Resources.Register("popper", new ScriptResource()
             {
-                Location = new UrlResourceLocation("~/script/umd/popper.min.js"),
+                Location = new UrlResourceLocation("~/script/popper.min.js"),
                 RenderPosition = ResourceRenderPosition.Head
             });
             config.Resources.Register("bootstrap", new ScriptResource()

@@ -35,7 +35,12 @@
                       RenderSettings.Mode="Server"
                       ShowHeaderWhenNoData="true">
             <Columns>
-                <dot:GridviewTemplateColumn HeaderText="Active" CssClass="text-center" HeaderCssClass="text-center">
+                <dot:GridviewTemplateColumn HeaderText="Hard-Coded Check" CssClass="text-center" HeaderCssClass="text-center">
+                    <ContentTemplate>
+                        <i class="fa-check-green" />
+                    </ContentTemplate>
+                </dot:GridviewTemplateColumn>
+                <dot:GridviewTemplateColumn HeaderText="Conditional Check" CssClass="text-center" HeaderCssClass="text-center">
                     <ContentTemplate>
                         <i class="{value: Active == "Y" ? "fa-check-green" : ""}" />
                     </ContentTemplate>

@@ -10,6 +10,7 @@
     <dot:RequiredResource Name="bootstrap"></dot:RequiredResource>
     <dot:RequiredResource Name="datatables"></dot:RequiredResource>
     <dot:RequiredResource Name="datetime-moment"></dot:RequiredResource>
+    <dot:RequiredResource Name="glyphicons-css"></dot:RequiredResource>
 </head>
 <body>
     <cc:Test />

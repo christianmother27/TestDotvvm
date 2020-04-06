@@ -138,6 +138,7 @@
     <Content Include="css\responsive.dataTables.css" />
     <Content Include="css\glyphicons.css" />
     <Content Include="favicon.ico" />
+    <Content Include="img\fa-check-green-256.png" />
     <Content Include="script\bootstrap.min.js" />
     <Content Include="script\datatables.min.js" />
     <Content Include="script\datetime-moment.js" />
@@ -169,9 +170,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="img\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
