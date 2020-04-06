@@ -1,0 +1,51 @@
+﻿@viewModel System.Object, mscorlib
+@baseType TestDotvvm.Controls.TestControl, TestDotvvm
+
+<script>
+    $(document).ready(function () {
+        $.fn.dataTable.moment('M/D/YYYY');
+    });
+    function SetupDatatable(element) {
+        if ($.fn.dataTable.isDataTable(element)) {
+            table = $(element).DataTable();
+        }
+        else {
+            table = $(element).DataTable({
+                responsive: true,
+                "order": [[1, "desc"], [3, "asc"]]
+            });
+        }
+    }
+</script>
+
+<dot:InlineScript>
+    ko.bindingHandlers["dataTableSetup"] = {
+        init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+            var controlProperties = ko.unwrap(valueAccessor());
+            SetupDatatable(element);
+        }
+    };
+</dot:InlineScript>
+
+<div class="card">
+    <div class="card-body">
+        <dot:GridView DataSource="{controlProperty: Data}"
+                      class="table table-striped table-bordered table-hover display compact w-100"
+                      data-bind="dataTableSetup: $control"
+                      RenderSettings.Mode="Server"
+                      ShowHeaderWhenNoData="true">
+            <Columns>
+                <dot:GridviewTemplateColumn HeaderText="Active" CssClass="text-center" HeaderCssClass="text-center">
+                    <ContentTemplate>
+                        <i class="{value: Active == "Y" ? "fa-check-green" : ""}" />
+                    </ContentTemplate>
+                </dot:GridviewTemplateColumn>
+                <dot:GridViewTextColumn HeaderText="Project Name" ValueBinding="{value: ProjectName}" HeaderCssClass="text-center" />
+                <dot:GridViewTextColumn HeaderText="Expires" ValueBinding="{value: Expiration}" Width="75px" FormatString="MM/dd/yyyy" HeaderCssClass="text-center" />
+                <dot:GridViewTextColumn HeaderText="Hours Awarded" ValueBinding="{value: HoursAwarded}" FormatString="0.0" CssClass="text-right" HeaderCssClass="text-center" />
+                <dot:GridViewTextColumn HeaderText="Hours Used" ValueBinding="{value: HoursUsed}" FormatString="0.0" CssClass="text-right" HeaderCssClass="text-center" />
+                <dot:GridViewTextColumn HeaderText="Hours Remaining" ValueBinding="{value: HoursRemaining}" Width="120px" FormatString="0.0" CssClass="text-right" HeaderCssClass="text-center" />
+            </Columns>
+        </dot:GridView>
+    </div>
+</div> 

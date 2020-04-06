@@ -1,0 +1,9 @@
+﻿.fa-check-green::before {
+    display: inline-block;
+    content: " ";
+    background: url("../glyphicons/fa-check-green-256.png") no-repeat 0 0;
+    background-size: 100%;
+    margin: 0px 3px 0 0px;
+    width: 12px;
+    height: 12px;
+} 
